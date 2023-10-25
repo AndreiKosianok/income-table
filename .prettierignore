@@ -1,0 +1,12 @@
+build/
+node_modules/
+coverage/
+.idea/
+.vscode/
+.github/
+
+*.html
+*.css
+*.txt
+
+__snapshots__/
