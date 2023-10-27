@@ -119,6 +119,8 @@ const Table: React.FC = () => {
       dataIndex: "date",
       key: "date",
       width: 300,
+      defaultSortOrder: "descend",
+      sorter: (a, b) => (dayjs(a.date).isBefore(dayjs(b.date)) ? -1 : 1),
       render: text => (
         <Typography.Text>
           {dayjs(text).format(EDATE_FORMAT.dateFormat)}
@@ -129,6 +131,8 @@ const Table: React.FC = () => {
       title: "Amount",
       dataIndex: "amount",
       key: "amount",
+      defaultSortOrder: "descend",
+      sorter: (a, b) => a.amount - b.amount,
       render: (text, { type }) => (
         <Typography.Text>
           {`${type === EIncomeType.EXPENSE ? "-" : ""}${text}$`}
